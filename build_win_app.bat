@@ -1,0 +1,1 @@
+dotnet publish -f:net8.0-windows10.0.19041.0 -c Release -r win-x64 -p:SelfContained=true -p:WindowsPackageType=None -o ./publish/windows

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:DarkMessApp.Controls"
+             BackgroundImageSource="background.jpeg"
+             x:Class="DarkMessApp.Views.LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <!-- затемнение фона -->
+            <BoxView Color="#00000080" />
+            <!-- Карточка -->
+            <Frame BackgroundColor="#1E1E1E"
+                   Opacity="0.9"
+                   Padding="30"
+                   CornerRadius="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   WidthRequest="300">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Log in"
+                           FontSize="24"
+                           HorizontalOptions="Center" />
+                    <Entry Placeholder="Email"
+                           x:Name="EmailText"
+                           Keyboard="Email" />
+                    <Entry Placeholder="Password"
+                           x:Name="PasswordText"
+                           IsPassword="True" />
+                    <controls:HoverButton Text="Log in"
+                            x:Name="LoginButton"
+                            FontSize="12"
+                            BackgroundColor="#7B2CBF"
+                            TextColor="White"
+                            HoverColor="#9A54D3"
+                            Clicked="OnLogin"/>
+                    <Label Text="Don't have an account?"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           TextColor="CornflowerBlue"
+                           HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
